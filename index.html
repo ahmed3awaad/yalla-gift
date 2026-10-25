@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yalla Gift — The gift is on the way</title>
+  <meta name="description" content="Yalla Gift: flowers, chocolates, gold jewellery and thoughtful gifts for every occasion — weddings, dates, hospital visits, birthdays and more." />
+  <meta name="theme-color" content="#7A0E2E" />
+  <link rel="icon" type="image/png" href="assets/gift-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="announce">🚚 Same-day delivery across Cairo &amp; Giza · Free gift wrapping on every order <span class="announce__tag">Demo</span></div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="Yalla Gift home">
+        <img src="assets/gift-icon.png" alt="" class="brand__icon" width="44" height="44" />
+        <span class="brand__word"><span class="brand__yalla">Yalla</span><span class="brand__gift">Gift</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#occasions">Occasions</a>
+        <a href="#gifts">Gifts</a>
+        <a href="#gold">Gold &amp; Jewellery</a>
+        <a href="#how">How it works</a>
+      </nav>
+      <div class="header__actions">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Search roses, gold, chocolate…" aria-label="Search gifts" />
+        </label>
+        <button class="icon-btn" id="openBasket" aria-label="Open basket">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="icon-btn__count" id="basketCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">The gift is on the way to make their day ✨</p>
+          <h1>The perfect gift for <span class="hl">every occasion</span>, delivered.</h1>
+          <p class="hero__lead">Wedding, date night, a dinner invite or a hospital visit? Tell us the occasion and your budget, and we’ll show you flowers, chocolates, gold and gifts that fit.</p>
+
+          <form class="finder" id="finder">
+            <label class="finder__field">
+              <span>Occasion</span>
+              <select id="finderOccasion"></select>
+            </label>
+            <label class="finder__field">
+              <span>Budget (EGP)</span>
+              <select id="finderBudget"></select>
+            </label>
+            <button class="btn btn--primary" type="submit">Find gifts →</button>
+          </form>
+
+          <ul class="hero__trust">
+            <li><strong>50+</strong> curated gifts</li>
+            <li><strong>12</strong> occasions</li>
+            <li><strong>18K &amp; 21K</strong> gold</li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__blob"></div>
+          <img src="assets/logo-full.png" alt="" class="hero__logo" />
+          <div class="float-card float-card--a"><span>🌹</span> Fresh roses daily</div>
+          <div class="float-card float-card--b"><span>✨</span> 21K gold pieces</div>
+          <div class="float-card float-card--c"><span>🚚</span> Delivered today</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Occasions -->
+    <section class="section" id="occasions">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Start with the moment</p>
+          <h2>What’s the occasion?</h2>
+          <p class="section__sub">Pick one and we’ll fill the gift list with ideas that fit it.</p>
+        </div>
+        <div class="occasion-grid" id="occasionGrid"></div>
+      </div>
+    </section>
+
+    <!-- Gifts -->
+    <section class="section section--tint" id="gifts">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow" id="giftsEyebrow">All occasions</p>
+            <h2 id="giftsTitle">Gift ideas for you</h2>
+          </div>
+          <button class="link-btn" id="resetFilters" hidden>Clear filters ✕</button>
+        </div>
+
+        <div class="filters">
+          <div class="filters__label">Budget</div>
+          <div class="price-tabs" role="tablist" aria-label="Price range" id="priceTabs"></div>
+
+          <div class="filters__label">Occasion</div>
+          <div class="chips" id="occasionChips"></div>
+
+          <div class="filters__row">
+            <div class="chips chips--small" id="categoryChips"></div>
+            <label class="sort">
+              Sort
+              <select id="sort">
+                <option value="featured">Featured</option>
+                <option value="low">Price: low to high</option>
+                <option value="high">Price: high to low</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <p class="results-count" id="resultsCount" aria-live="polite"></p>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- Gold -->
+    <section class="gold" id="gold">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow eyebrow--gold">Gold &amp; Jewellery</p>
+          <h2>Gold that says <span class="gold-text">forever</span></h2>
+          <p class="section__sub">Necklaces, bracelets, rings and shabka sets in 18K and 21K, plus lighter-budget plated pieces.</p>
+        </div>
+        <div class="gold-tabs" role="tablist" aria-label="Jewellery type" id="goldTabs"></div>
+        <div class="product-grid product-grid--gold" id="goldGrid"></div>
+        <p class="gold__note">Gold prices follow the daily rate and are shown as demo values. Every piece comes with a certificate and a gift box.</p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Yalla, it’s easy</p>
+          <h2>How it works</h2>
+        </div>
+        <ol class="steps">
+          <li><span class="steps__num">1</span><h3>Pick the occasion</h3><p>Wedding, a date, a hospital visit… tell us what’s happening.</p></li>
+          <li><span class="steps__num">2</span><h3>Set your budget</h3><p>From 200 EGP flowers to 21K gold, there’s something in every range.</p></li>
+          <li><span class="steps__num">3</span><h3>We deliver it</h3><p>Wrapped beautifully, with your card, to their door, even the same day.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Can’t decide? Let us surprise them.</h2>
+          <p>Tell us the occasion and budget, and our gift stylists will hand-pick something special.</p>
+        </div>
+        <a href="#gifts" class="btn btn--gold" id="surpriseBtn">Surprise me 🎁</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a href="#top" class="brand brand--light">
+          <img src="assets/gift-icon.png" alt="" class="brand__icon" width="40" height="40" />
+          <span class="brand__word"><span class="brand__yalla">Yalla</span><span class="brand__gift">Gift</span></span>
+        </a>
+        <p class="footer__tag">The gift is on the way to make their day.</p>
+      </div>
+      <div class="footer__cols">
+        <div><h4>Shop</h4><a href="#occasions">Occasions</a><a href="#gifts">All gifts</a><a href="#gold">Gold &amp; Jewellery</a></div>
+        <div><h4>Help</h4><a href="#how">How it works</a><a href="#">Delivery areas</a><a href="#">Contact us</a></div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Yalla Gift · Demo website</span>
+      <span>Photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span>
+    </div>
+  </footer>
+
+  <!-- Basket drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Your basket" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Your basket</h3>
+      <button class="icon-btn" id="closeBasket" aria-label="Close basket">✕</button>
+    </div>
+    <ul class="drawer__list" id="basketList"></ul>
+    <div class="drawer__foot">
+      <div class="drawer__total"><span>Total</span><strong id="basketTotal">EGP 0</strong></div>
+      <button class="btn btn--primary btn--block" id="checkoutBtn">Checkout</button>
+      <p class="drawer__note">This is a demo; no real orders are placed.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
