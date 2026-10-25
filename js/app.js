@@ -26,10 +26,10 @@
 
   function matches(p, { ignoreBand = false } = {}) {
     if (state.occasion !== "all" && !p.occasions.includes(state.occasion)) return false;
-    if (state.cat !== "all" && p.cat !== state.cat) return false;
+    if (state.cat === "originals" ? !p.original : state.cat !== "all" && p.cat !== state.cat) return false;
     if (!ignoreBand && state.band !== "all" && !inBand(p.price, bandById[state.band])) return false;
     if (state.query) {
-      const hay = `${p.name} ${catById[p.cat].label} ${p.karat || ""} ${p.type || ""} ${p.occasions.map((o) => occasionById[o].name).join(" ")}`.toLowerCase();
+      const hay = `${p.name} ${p.desc || ""} ${p.original ? "yalla original" : ""} ${catById[p.cat].label} ${p.karat || ""} ${p.type || ""} ${p.occasions.map((o) => occasionById[o].name).join(" ")}`.toLowerCase();
       if (!hay.includes(state.query)) return false;
     }
     return true;
@@ -40,12 +40,15 @@
 
   function cardHTML(p) {
     const gold = p.cat === "gold";
-    const badge = p.badge ? `<span class="card__badge ${gold ? "card__badge--gold" : ""}">${p.badge}</span>` : "";
+    const badge = p.original
+      ? `<span class="card__badge card__badge--original">✨ Yalla Original</span>`
+      : p.badge ? `<span class="card__badge ${gold ? "card__badge--gold" : ""}">${p.badge}</span>` : "";
+    const desc = p.desc ? `<p class="card__desc">${p.desc}</p>` : "";
     const meta = gold
       ? `<div class="card__meta"><span class="card__pill">${p.karat}</span>${p.weight !== "—" ? `<span class="card__pill">${p.weight}</span>` : ""}</div>`
       : `<div class="card__occ" title="${p.occasions.map((o) => occasionById[o].name).join(", ")}">${p.occasions.map((o) => occasionById[o].emoji).join("")}</div>`;
     return `
-      <article class="card">
+      <article class="card ${p.original ? "card--original" : ""}">
         <div class="card__media">
           <img src="${IMG(p.img, 600)}" alt="${p.name}" loading="lazy" data-fallback />
           ${badge}
@@ -54,6 +57,7 @@
         <div class="card__body">
           <span class="card__cat">${gold ? p.type : catById[p.cat].label}</span>
           <h3 class="card__name">${p.name}</h3>
+          ${desc}
           ${meta}
           <div class="card__foot">
             <span class="card__price"><small>EGP</small>${fmt(p.price)}</span>
@@ -114,6 +118,10 @@
       `<button class="gold-tab ${state.goldType === t.id ? "is-active" : ""}" role="tab" aria-selected="${state.goldType === t.id}" data-gold="${t.id}">${t.label}</button>`).join("");
     const list = PRODUCTS.filter((p) => p.cat === "gold" && (state.goldType === "all" || p.type === state.goldType));
     $("#goldGrid").innerHTML = list.map(cardHTML).join("");
+  }
+
+  function renderOriginals() {
+    $("#originalsGrid").innerHTML = PRODUCTS.filter((p) => p.original).map(cardHTML).join("");
   }
 
   function renderFinder() {
@@ -267,6 +275,7 @@
   renderFinder();
   renderOccasionGrid();
   renderGifts();
+  renderOriginals();
   renderGold();
   renderBasket();
 })();

@@ -31,6 +31,7 @@ const PRICE_BANDS = [
 
 const CATEGORIES = [
   { id: "all",       label: "Everything" },
+  { id: "originals", label: "✨ Yalla Originals" },
   { id: "flowers",   label: "Flowers" },
   { id: "sweets",    label: "Chocolate & Sweets" },
   { id: "gold",      label: "Gold & Jewellery" },
@@ -39,6 +40,7 @@ const CATEGORIES = [
   { id: "home",      label: "Home & Hampers" },
   { id: "kids",      label: "Kids & Baby" },
   { id: "tech",      label: "Tech" },
+  { id: "experience", label: "Experiences" },
 ];
 
 // Gold pieces carry `type`, `karat` and `weight` for the jewellery section.
@@ -110,6 +112,46 @@ const PRODUCTS = [
 
   // Tech
   { id: 39, name: "Wireless Headphones",           cat: "tech", price: 4200, img: "1505740420928-5e560c06d30e", occasions: ["graduation", "birthday"] },
+
+  // Yalla Originals: one-of-a-kind gift ideas, flagged with `original` and a short `desc`.
+  { id: 101, original: true, name: "Star Map of the Night You Met", cat: "home", price: 850, img: "1475274047050-1d0c0975c63e", occasions: ["date", "anniversary", "engagement"],
+    desc: "A framed print of the exact sky over Cairo on your special date, with your names and coordinates." },
+  { id: 102, original: true, name: "Nile Felucca Sunset for Two", cat: "experience", price: 3500, img: "1761351108766-8ddf19b835ac", occasions: ["date", "engagement", "anniversary"],
+    desc: "A private one-hour felucca ride at golden hour, with roses on board, mint lemonade and your playlist." },
+  { id: 103, original: true, name: "Voice-Note Teddy", cat: "kids", price: 650, img: "1556012018-50c5c0da73bf", occasions: ["hospital", "newborn", "date", "birthday"],
+    desc: "Squeeze its paw and it plays a 30-second voice message you record when you order." },
+  { id: 104, original: true, name: "365 Reasons Letter Box", cat: "home", price: 480, img: "1770733696519-bb15e439b0b1", occasions: ["anniversary", "date", "birthday"],
+    desc: "365 wax-sealed mini notes, one reason to open each morning. Send us yours or pick from our list." },
+  { id: 105, original: true, name: "Kahk & Qahwa Morning Box", cat: "sweets", price: 780, img: "1672206804022-5bf1248a9d7b", occasions: ["ramadan", "dinner", "housewarming"],
+    desc: "Fresh Eid kahk and ghorayeba, Turkish coffee with cardamom, and two hand-painted finjan cups." },
+  { id: 106, original: true, name: "21K Arabic Calligraphy Name Necklace", cat: "gold", type: "necklace", karat: "21K", weight: "3.0 g", price: 14500, img: "1761210875101-1273b9ae5600", occasions: ["engagement", "birthday", "mothers"], badge: "Made to order",
+    desc: "Her name hand-drawn in Thuluth calligraphy by our artist, then cast in 21K gold." },
+  { id: 107, original: true, name: "Get-Well Comfort Kit", cat: "home", price: 1150, img: "1600369672770-985fd30004eb", occasions: ["hospital"],
+    desc: "A soft knit blanket, herbal teas, a puzzle book, cosy socks and a mini orchid for the bedside." },
+  { id: 108, original: true, name: "Bride's Morning Box", cat: "beauty", price: 2200, img: "1782787231541-75bc96dd4fa1", occasions: ["wedding"],
+    desc: "A satin “Bride” robe, mini perfume, rose petals, snacks and a calm-nerves tea for the big morning." },
+  { id: 109, original: true, name: "Baby's First Gold Bracelet", cat: "gold", type: "bracelet", karat: "18K", weight: "1.4 g", price: 6800, img: "1780329925494-8500b1501d74", occasions: ["newborn"],
+    desc: "A tiny adjustable 18K bracelet engraved with the baby's name and birth date. It grows with them." },
+  { id: 110, original: true, name: "Message in a Bottle from Sahel", cat: "home", price: 300, img: "1636333798006-993a9f2611e3", occasions: ["date", "anniversary", "birthday"],
+    desc: "Your handwritten letter rolled in a glass bottle with real North Coast sand and tiny shells." },
+  { id: 111, original: true, name: "Family Recipe Book", cat: "home", price: 1600, img: "1769794371007-9bf419217727", occasions: ["mothers", "wedding", "housewarming"],
+    desc: "Send us Teta's recipes as voice notes or photos and we turn them into a hardcover family cookbook." },
+  { id: 112, original: true, name: "Engraved Ramadan Fanous", cat: "home", price: 1350, img: "1781947486860-197257ddbb7b", occasions: ["ramadan", "housewarming"],
+    desc: "A handmade brass lantern from El-Moez Street, engraved with the family's name and a dua." },
+  { id: 113, original: true, name: "“Our Song” Vinyl Frame", cat: "home", price: 1250, img: "1616714109948-c74fe5029a4d", occasions: ["anniversary", "engagement", "wedding"],
+    desc: "Your song pressed as a playable vinyl and framed with the lyrics and the date you first danced." },
+  { id: 114, original: true, name: "Thank-You-for-Dinner Basket", cat: "home", price: 690, img: "1566698629409-787a68fc5724", occasions: ["dinner", "housewarming"],
+    desc: "Fresh baladi bread, Siwa olive oil, za'atar and a fig candle. Never arrive empty-handed again." },
+  { id: 115, original: true, name: "Fayoum Desert Stargazing Night", cat: "experience", price: 5800, img: "1638862925201-4e373cb6a630", occasions: ["anniversary", "engagement", "graduation"],
+    desc: "A night for two at a Wadi El Rayan camp with Bedouin dinner, telescope and a sunrise sandboard." },
+  { id: 116, original: true, name: "Signature Scent Workshop", cat: "experience", price: 1900, img: "1718466044521-d38654f3ba0a", occasions: ["date", "mothers", "birthday"],
+    desc: "Create a one-of-a-kind perfume together with a master blender in Khan el-Khalili, bottle included." },
+  { id: 117, original: true, name: "Yalla Mystery Box", cat: "home", price: 500, img: "1761471858192-c97158a53d0f", occasions: ["birthday", "graduation", "date"], badge: "Surprise!",
+    desc: "Tell us their vibe and your budget; our gift stylists hand-pick everything. Even you won't know!" },
+  { id: 118, original: true, name: "Pottery Date for Two", cat: "experience", price: 1400, img: "1595351298020-038700609878", occasions: ["date", "anniversary"],
+    desc: "Two hours at the wheel in Tunis Village style. We fire your mugs and deliver them a week later." },
+  { id: 119, original: true, name: "Memory Music Box", cat: "kids", price: 980, img: "1784398073664-33f0275571ef", occasions: ["newborn", "birthday", "mothers"],
+    desc: "A wind-up carousel music box that plays a lullaby of your choice, engraved with a little message." },
 ];
 
 const GOLD_TYPES = [

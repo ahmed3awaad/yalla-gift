@@ -13,8 +13,9 @@ A good-looking demo website where a visitor picks an occasion and a budget and s
 1. **Hero:** an occasion and budget finder.
 2. **Occasion cards:** 12 occasions.
 3. **Gifts:** price tabs with live counts, occasion chips, category chips, sorting and search.
-4. **Gold & Jewellery:** a dark section with type tabs (necklaces, bracelets, rings, sets).
-5. **Other parts:** how it works, a "Surprise me" button, the footer, and a basket drawer that stores the basket in the browser where possible.
+4. **Yalla Originals:** 19 invented gift ideas (`original: true`, with a short `desc`), also findable through the "✨ Yalla Originals" category chip.
+5. **Gold & Jewellery:** a dark section with type tabs (necklaces, bracelets, rings, sets).
+6. **Other parts:** how it works, a "Surprise me" button, the footer, and a basket drawer that stores the basket in the browser where possible.
 
 ## Price bands
 Each band's upper bound is inclusive and its lower bound exclusive, so 500 EGP falls only in "200–500". The 200–500 band also includes anything under 200.

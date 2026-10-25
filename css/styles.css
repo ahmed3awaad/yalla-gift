@@ -279,6 +279,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; margin: 0;
 }
 .card__add:hover { background: var(--raspberry); color: #fff; }
 
+/* Yalla Originals */
+.card__badge--original { background: var(--grad-brand); color: #fff; }
+.card__desc { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+.card--original { border-color: rgba(242, 169, 59, 0.55); box-shadow: 0 0 0 1px rgba(242, 169, 59, 0.25), var(--shadow-sm); }
+.originals {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(500px 300px at 0% 0%, rgba(242, 169, 59, 0.16), transparent 70%),
+    radial-gradient(600px 400px at 100% 100%, rgba(227, 24, 79, 0.10), transparent 70%),
+    var(--cream);
+}
+.originals .gold-text { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%); -webkit-background-clip: text; background-clip: text; }
+.product-grid--originals { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.product-grid--originals .card__media { aspect-ratio: 4 / 3; }
+.product-grid--originals .card__name { font-size: 1.2rem; }
+.product-grid--gold .card__desc { color: rgba(255, 233, 239, 0.7); }
+.product-grid--gold .card__badge--original { background: var(--grad-gold); color: var(--burgundy-deep); }
+
 .empty {
   grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: var(--white);
   border-radius: var(--radius); border: 2px dashed var(--line); color: var(--muted);
@@ -393,6 +411,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; margin: 0;
   .product-grid, .occasion-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 860px) {
+  .product-grid--originals { grid-template-columns: repeat(2, 1fr); }
   .hero__inner { grid-template-columns: 1fr; }
   .hero__art { max-width: 380px; order: -1; }
   .search { width: 200px; }
@@ -418,6 +437,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; margin: 0;
   .occasion__body { left: 12px; right: 12px; bottom: 12px; }
   .filters { padding: 16px; }
   .filters__row { flex-direction: column; align-items: stretch; }
+  .product-grid--originals { grid-template-columns: 1fr; }
+  #productGrid .card__desc { display: none; }
   .card__body { padding: 12px; }
   .card__name { font-size: 0.98rem; }
   .card__foot { flex-direction: column; align-items: stretch; }
