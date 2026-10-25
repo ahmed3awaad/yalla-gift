@@ -10,8 +10,8 @@ This is the **demo website** (front-end only, no real orders).
 
 - **12 occasions:** Wedding, Engagement, Date Night, Dinner Invitation, Get Well Soon, Birthday, New Baby, Anniversary, Graduation, Ramadan & Eid, Housewarming and Mother's Day
 - **Price tabs (EGP):** 200–500 · 500–1,000 · 1,000–2,000 · 2,000–5,000 · 5,000–15,000 · 15,000+, each showing a live count
-- **Gold & Jewellery:** 18K/21K necklaces, bracelets, rings and shabka sets, with karat and weight
-- **Yalla Originals:** 19 one-of-a-kind gift ideas such as a Nile felucca sunset, a star map of the night you met, a 21K Arabic calligraphy name necklace and a Fayoum stargazing night
+- **Gold & Jewellery:** 18K/21K necklaces, bracelets, anklets, rings, earrings and shabka sets, with karat and weight
+- **130+ gifts**, including **Yalla Originals:** 19 one-of-a-kind gift ideas such as a Nile felucca sunset, a star map of the night you met, a 21K Arabic calligraphy name necklace and a Fayoum stargazing night
 - Category filters, search, sorting, a wishlist and a basket drawer with totals
 - Responsive layout that works on phones
 
